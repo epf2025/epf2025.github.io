@@ -1,344 +1,149 @@
-@-ms-viewport
-{
-    width: device-width;
-}
-@-o-viewport
-{
-    width: device-width;
-}
-@viewport
-{
-    width: device-width;
+/* main.css */
+
+/* These are the colors and fonts used throughout the webpage.
+ * I've listed them here so that a user may easily
+ * do a search-and-replace for these to change the site theme.
+ *   'Roboto',sans-serif; Font for the title text
+ *   'Roboto-Slab',serif; Font for the body text 
+ *   #fafafa; Background color of the site
+ *   #505050; Foreground (text) color of the site
+ *   #52739e; Navy, "Template" in the logo, current page in navigation, special titles in the Program
+ *   #b2132e; Reddish, "Conference" in the logo, hover color for links
+ *   #813c54; Heading color, titles in the Program
+ *   #b8860b; Dark Goldenrod, color for links
+ */
+
+@import url("font.css");
+
+*{
+    border:0;
+    font:inherit;
+    font-size:1em;
+    margin:0;
+    padding:0;
+    vertical-align:baseline;
 }
 
-a,
-a:hover,
-a:visited,
-a:link
-{
-    text-decoration: none;
-}
-a,
-a:visited,
-a:link
-{
-    color: #4b719f;
-}
-a:hover
-{
-    color: #5795ae;
+body{
+    background-color: #fafafa;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #505050; 
+    text-align:left;
+    font-family:'Roboto',sans-serif;
+    font-size:1em;
+    line-height:1.5em;
+    margin: 60px auto;
+    width: 1000px;
 }
 
-body
-{
-    font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    line-height: 1.3;
-
-    width: auto;
-    height: 100%;
-    min-height: 100%;
-    margin: 0;
-
-    background-color: #fcfcfc;
+a{color: #b8860b; text-decoration:none;}
+a.current{color: #52739e;}
+a.current:hover{color: #e82945;}
+a:hover{color: #b2132e;}
+a:active{color: #e82945;}
+h1,h2,h3,h4{clear:left; color: #813c54; margin:1.5em 0em 1em 0em; font-family:'Roboto Slab',serif; text-shadow: 1px 1px 2px #d0d0d0;}
+h1{font-size:2.67em;}
+h2{font-size:2.00em;}
+h3{font-size:1.67em;}
+h4{font-size:1.33em;}
+p{list-style:none; margin:24px auto 24px auto; padding:0px; width:950px; text-align:left;}
+p,li{font-size:18px; line-height:1.5;}
+li a, p a {text-decoration:underline; text-decoration-color:#b8860b;}
+ul{list-style:none; margin:20px auto 0px auto; padding:0px; width:800px; text-align:left;}
+ul li{list-style:none; margin:0px auto 0px auto; padding:0px; text-align:left;}
+i,em{font-style:italic;}
+b,strong{font-weight:bold;}
+sup{
+    vertical-align: super;
+    font-size: 0.8em;
+    line-height: 0;
 }
-html
-{
-    position: relative;
-
-    height: 100%;
-    min-height: 100%;
-    margin: 0;
+sub{
+    vertical-align: sub;
+    font-size: 0.8em;
+    line-height: 0;
 }
-li
-{
+table{
+    width: 1000px;
+    margin: 12px auto 24px auto;
+    float: center;
+    /* UNCOMMENT THIS FOR DEBUGGING THE ALIGNMENT */
+    /*border: 1px solid black;*/
+}
+th,td{
     text-align: left;
-}
-.author
-{
-    color: #444;
-    /* margin-top: 25px;
-    margin-bottom: 25px; */
-
+    /* UNCOMMENT THIS FOR DEBUGGING THE ALIGNMENT */
+    /*border: 1px solid black;*/
 }
 
-.author h1,
-.author h2,
-.author h3,
-.author h4,
-.author h5,
-.author h6,
-.author p
-{
-    font-family: 'Merriweather', serif;
-}
-.category
-{
-    color: #966 !important;
-}
-.container
-{
-    overflow: auto;
+/* Website Banner */
+.banner {position: relative; font-family:'Roboto Slab',serif;}
+.top-left {font-size:2.5em; color: #505050; background: #fafafa; text-align: center; width: 1000px; height: 67px; position: absolute; padding: 36px 0 0 0; top: 0px;}
+.bottom-right {font-size:2.33em; color: #fafafa; line-height: 1.5em; width: auto; height: 100px; padding: 0px 27px 27px 0px; text-align: right; position: absolute; bottom: 0px; right: 0px; text-shadow: 0px 0px 6px #000000;}
+.cite{font-size:0.7em;line-height: 0.7em;vertical-align: bottom;color:#fafafa;width: auto;height: 20px;position: absolute; bottom: 0px; left: 5px;}
+/* Conference Title Logo */
+.title1{color: #b2132e; text-shadow: 1px 1px 3px #c0c0c0;} 
+.title2{color: #52739e; text-shadow: 1px 1px 3px #c0c0c0;}
+.year{color: #505050; font-size:0.67em; font-weight: lighter;}
 
-    max-width: 50%;
-    padding: 0 15px;
-    margin: auto;
-}
-.wide-container
-{
-    overflow: auto;
+/* Navigation Links (Home, Registration, etc) */
+table.navigation{width:1000px;}
+td.navigation{font-size:1.67em; white-space:nowrap; width:20%; text-align:center; vertical-align:middle; padding:0px 0px 0px 0px;}
+/*  左右两列*/
+h3.two-colum-title { margin: 20px auto 0px auto;}
+div.two-column-layout {margin-top: 0px;margin-left: auto;width: 100%;display: grid; /* 使用 CSS Grid 布局 */
+    grid-template-columns: 60% 40%; /* 将容器分成两列，每列的宽度平分 */
+    grid-gap: 0px; padding-left: 20px;/* 设置列之间的间隔为 0px */}
+ul.list {list-style:circle; margin-left: 24px;}
+li.list{list-style:disc;margin-left: 24px;}
+/*table in logistic page*/
+table.list{border-collapse: collapse; margin-left: 24px;border: 1px solid black;width: 850px;}
+td.note {text-align: center;}
+td.border {border: 1px solid black;text-align: center; vertical-align:middle;}
+th.border {border: 1px solid black;text-align: center;}
+ol{margin-left: 48px;}
+/* Sponsor Images */
+table.sponsors{width:400px;margin-top: 100px;margin-bottom: 0px;}
+td.sponsor{white-space:nowrap; width:40%; text-align:left; vertical-align:bottom; padding:5% 5% 5% 5%;}
+td.sponsor_gap{white-space:nowrap; width:20%; text-align:left; vertical-align:bottom; padding:5% 5% 5% 5%;}
+td.sponsor img{width: 80%;}
+span.title-special{padding: 12px 12px 12px 4px;width: 90%; font-size:1.5em; color: #52739e; height:32px; font-family:'Roboto Slab',serif; text-shadow: 1px 1px 2px #d0d0d0;}
+/* The Table on the Program Page */
+td.room{padding: 4px 12px 4px 4px; width: 90%; vertical-align:bottom; font-size:1.67em; color: #52739e; height:32px;}
+td.date{white-space:nowrap; width:130px; text-align:right; vertical-align:middle; padding:4px 16px 0px 0px;}
+td.title{padding: 4px 12px 4px 4px; width: 90%; vertical-align:top; font-size:1.5em; color: #813c54; height:32px; font-family:'Roboto Slab',serif; text-shadow: 1px 1px 2px #d0d0d0; }
+td.title-special{padding: 4px 12px 4px 4px; width: 90%; vertical-align:top; font-size:1.5em; color: #52739e; height:32px; font-family:'Roboto Slab',serif; text-shadow: 1px 1px 2px #d0d0d0;}
+td.speaker{padding: 4px 12px 4px 4px; font-style: italic; font-size:1em; max-height:999999px}
+td.abstract{padding: 4px 12px 12px 4px; font-size:1em; max-height:999999px}
+td.abstract img{display: block; margin: 4px auto 8px auto}
+table.plenary{padding-top: 8px; background: #ffffff;}
 
-    /* max-width: 75%; */
-    padding: 0 15px;
-    margin: auto;
-}
-.content
-{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-div.content
-{
-    font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 300;
+/* Registration and Directions iframes and Images */
+iframe.registration{display:block; margin:1em auto 2em auto; width:700px; height:1400px; border:none;}
+iframe.directions{display:block; margin:1em auto 2em auto; width:800px; height:400px; border:none;}
+img.center{display:block; width:67%; margin:1em auto 2em auto;}
 
-    color: #444;
-}
-.copyright
-{
-    font-family: 'Merriweather', serif;
-    font-size: 12px;
-    font-weight: 200;
-}
-.description
-{
-    font-family: 'Lato', sans-serif;
-    font-weight: 200;
-    color: #8b8b8b;
-}
-.error
-{
-    font-family: 'Lato', sans-serif;
+/* Participant list Images */
+table.flyers{width:800px;}
+td.participant_list{white-space:nowrap; width:50%; text-align:center; vertical-align:middle; padding:0px 0px 0px 0px;}
+td.sponsor img{width: 100%}
 
-    margin-top: 100px;
-}
-.error h1
-{
-    font-size: 80px;
+footer{font-size:0.875em; margin-top:5em; text-align:center;}
 
-    color: #8b8b8b;
-}
-.error p
-{
-    margin-top: 150px;
-
-    color: #777;
-}
-.excerpt
-{
-    font-family: 'Lato', sans-serif;
-    font-size: 18px;
-    font-weight: 200;
-
-    color: #555;
-    margin-bottom: 20px;
-}
-.footer
-{
-    margin-top: 40px;
-
-    color: #8b8b8b;
-}
-.header
-{
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-.front-image
-{
-    width: 20%;
-    min-width: 200px;
-    max-width: 500px;
-}
-.info
-{
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.intro
-{
-    /* font-family: 'Merriweather', serif; */
-    font-weight: 300;
-    color: #777;
-}
-h3.intro
-{
-    margin-top: 0px
-}
-.list
-{
-    font-family: 'Lato', sans-serif;
-}
-.list li
-{
-    list-style: none;
-}
-.list-entry
-{
-    font-family: 'Merriweather', serif;
-    font-size: 25px;
-    font-weight: 400;
-
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.list-entry-link
-{
-    padding: 0;
-}
-.main-menu
-{
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.menu
-{
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.menu-item
-{
-    font-family: 'Lato', sans-serif;
-    font-size: 20px;
-    font-weight: 300;
-    margin-left: 10px;
-    margin-right: 10px;
-
-    text-decoration: none;
-}
-
-.main-menu h4
-{
-    margin-bottom: 0.1em;
-    margin-top: 0.1em;
-}
-
-.meta
-{
-    font-family: 'Lato', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 300;
-
-    color: #8b8b8b;
-    margin-bottom: 0.2rem;
-}
-.content p.meta {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-}
-
-a.meta
-{
-    color: #966;
-}
-h6.meta
-{
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    font-weight: 200;
-
-    color: #8b8b8b;
-}
-section.meta {
-    margin-top:
-}
-.powered
-{
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    font-weight: 300;
-}
-.extra-footer
-{
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    font-weight: 300;
-}
-.social {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.social,
-.social a
-{
-    margin-left: 2px;
-    margin-right: 2px;
-}
-.title
-{
-    /* font-family: 'Merriweather', serif; */
-    font-weight: 400;
-
-    color: #555;
-}
-
-header.content-header
-{
-    margin-top: 50px;
-    padding: 0 15px;
-}
-
-header.content-header .author
-{
-    font-weight: 300;
-}
-
-@media (max-width: 991px)
-{
-    .container {
-        max-width: 80%;
-        min-width: 0;
-    }
-    .header
-    {
-        margin-top: 50px;
-        margin-bottom: 20px;
-    }
-    .list
-    {
-        font-family: 'Lato', sans-serif;
-
-        margin-top: 30px;
-    }
-}
-
-pre > code {
-    white-space: pre;
-    word-wrap: initial;
-    word-break: initial;
-    font-size: 85%;
-}
-
-code {
-    color: #333333;
-    -webkit-font-smoothing: antialiased;
-}
-
-pre {
-    overflow: auto;
-    background-color: #f2f2f5;
-    border-radius: 4px;
-    line-height: 1.3;
-    margin-top: 1.2rem;
-    padding: 16px;
-    word-wrap: normal;
-}
-
-.center
-{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+/* My hacky way of making the site mobile-friendly */
+@media only screen and (max-width: 1100px) {
+    h2{font-size:3.00em;}
+    h3{font-size: 2.00em;}
+    p{font-size:1.5em; line-height:1.5em;}
+    div.two-column-layout{font-size: 0.75em;}
+    ul li{font-size:2em; line-height:2em;}
+    ol li{font-size:1.5em; line-height:1.5em;}
+    ul.list{font-size:0.75em; line-height:0.75em;}
+    th,td,tr{font-size:1.5em; line-height:1.5em;}
+    td.date{font-size:1em; padding-top:0.5em;}
+    td.navigation{font-size:1.5em; padding:0px 20px 0px 20px;}
+    table.footer{font-size:0.33em;}
+    table.list{font-size: 0.5em;}
+    td.note{font-size: 1em;}
 }
