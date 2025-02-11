@@ -78,6 +78,7 @@ th,td{
 }
 
 /* Website Banner */
+.header-container {display: flex;justify-content: space-between; /* 左右对齐 */align-items: center; /* 让文本垂直居中 */width: 100%; /* 让容器充满整个页面宽度 */padding: 10px 20px; /* 适当留白 */box-sizing: border-box; /* 让 padding 不影响整体宽度 */}
 .banner {position: relative; font-family:'Roboto Slab',serif;}
 .top-left {font-size:2.5em; color: #505050; background: #fafafa; text-align: center; width: 1000px; height: 67px; position: absolute; padding: 36px 0 0 0; top: 0px;}
 .bottom-right {font-size:2.33em; color: #fafafa; line-height: 1.5em; width: auto; height: 100px; padding: 0px 27px 27px 0px; text-align: right; position: absolute; bottom: 0px; right: 0px; text-shadow: 0px 0px 6px #000000;}
