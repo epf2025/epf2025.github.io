@@ -133,6 +133,7 @@
     <thead>
       <tr>
         <th style="border: 1px solid black; text-align: center; font-weight: bold;">Room Type</th>
+        <th style="border: 1px solid black; text-align: center; font-weight: bold;">8.24(RMB)</th>
         <th style="border: 1px solid black; text-align: center; font-weight: bold;">8.25(RMB)</th>
         <th style="border: 1px solid black; text-align: center; font-weight: bold;">8.26(RMB)</th>
         <th style="border: 1px solid black; text-align: center; font-weight: bold;">8.27(RMB)</th>
@@ -146,9 +147,11 @@
         <td style="border: 1px solid black; text-align: center;">380</td>
         <td style="border: 1px solid black; text-align: center;">380</td>
         <td style="border: 1px solid black; text-align: center;">380</td>
+        <td style="border: 1px solid black; text-align: center;">380</td>
       </tr>
       <tr>
         <td style="border: 1px solid black; text-align: center;">Superior Twin Bed Room</td>
+        <td style="border: 1px solid black; text-align: center;">480</td>
         <td style="border: 1px solid black; text-align: center;">480</td>
         <td style="border: 1px solid black; text-align: center;">480</td>
         <td style="border: 1px solid black; text-align: center;">480</td>
@@ -192,6 +195,9 @@ Click here to submit
 <!-- 住宿表格 -->
 
 <h3>Submit your request about hotel: </h3>
+
+<p>Note: If you already have hotel arrangements, you do not need to complete this form.</p>
+
 <div style="background-color: white;">
     <form action="https://formspree.io/f/mjkypvbw"  method="POST">
 <table>
@@ -222,10 +228,16 @@ Click here to submit
 
     <tr>
       <td>Accommodation</td>
-      <td colspan="4">
+        <td>
         <label class="checkbox-group" for="single"><input type="radio" id="single" name="hotel" value="single" required>Single Room</label>
         <label class="checkbox-group" for="shared"><input type="radio" id="shared" name="hotel" value="shared" required>Shared Room</label>
       </td>
+
+
+      <td>Roommate Preference<br>
+        <small>(Write “None” if not specified)</small>
+      <td><input type="mate" name="mate" style="border: 2px solid #4b719f; padding: 5px; border-radius: 4px;" required></td>
+
     </tr>
 
     <tr>
